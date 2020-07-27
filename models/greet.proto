@@ -1,0 +1,21 @@
+syntax = "proto3";
+option go_package = "models";
+package greet;
+
+service Greeter {
+  rpc SayHello(Name) returns (GreeterResponse) {};
+  rpc GreetFullName(Name) returns (FullNameResponse) {};
+}
+
+message Name {
+  string FirstName = 1;
+  string LastName = 2;
+}
+
+message GreeterResponse {
+  string Response = 1;
+}
+
+message FullNameResponse {
+  Name name = 1;
+}
